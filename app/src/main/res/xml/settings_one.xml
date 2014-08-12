@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Countdown for DashClock Extension
+  ~ Copyright (c) 2014 Benjamin Butzow
+  ~ This program is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program; if not, write to the Free Software Foundation,
+  ~ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="pref_title_one"
+        android:title="@string/pref_title" />
+
+    <CheckBoxPreference
+        android:key="pref_custom_message_one"
+        android:title="@string/pref_custom_message"
+        android:summary="@string/pref_custom_message_summary" />
+    <Preference
+        android:key="pref_message_one"
+        android:title="@string/pref_message"
+        android:defaultValue="@string/pref_message_default"
+        android:dependency="pref_custom_message_one"/>
+
+    <Preference
+        android:key="pref_icon_one"
+        android:title="@string/pref_icon" />
+
+    <Preference
+        android:key="pref_date_one"
+        android:title="@string/pref_date" />
+
+    <CheckBoxPreference
+        android:key="pref_days_only_one"
+        android:title="@string/pref_days"
+        android:disableDependentsState="true" />
+    <Preference
+        android:key="pref_time_one"
+        android:title="@string/pref_time"
+        android:dependency="pref_days_only_one"/>
+
+    <ListPreference
+        android:key="pref_action_one"
+        android:title="@string/pref_action"
+        android:dialogTitle="@string/pref_action"
+        android:entries="@array/click_actions"
+        android:entryValues="@array/click_actions_values"
+        android:defaultValue="0" />
+</PreferenceScreen>

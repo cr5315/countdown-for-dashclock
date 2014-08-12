@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Countdown for DashClock Extension
+  ~ Copyright (c) 2014 Benjamin Butzow
+  ~ This program is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program; if not, write to the Free Software Foundation,
+  ~ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+  -->
+
+<resources>
+    <string name="app_name">Countdown for DashClock</string>
+    <string name="title_settings">Countdown Settings</string>
+    <string name="extension_title">Countdown</string>
+    <string name="extension_description">Counts the days, hours, and minutes until an event</string>
+
+    <string name="extension_title_one">Countdown #1</string>
+    <string name="extension_title_two">Countdown #2</string>
+    <string name="extension_title_three">Countdown #3</string>
+
+    <!-- Settings -->
+    <string name="pref_title">Title</string>
+    <string name="pref_custom_message">Custom Message</string>
+    <string name="pref_custom_message_summary">Set your own custom message</string>
+    <string name="pref_message">Message</string>
+    <string name="pref_icon">Icon</string>
+    <string name="pref_date">Date</string>
+    <string name="pref_days">Days Only</string>
+    <string name="pref_time">Time</string>
+    <string name="pref_action">Click Action</string>
+
+    <string name="message_dialog_help">Enter the message you want displayed in DashClock. Tap \"Title\" to insert the countdown title and tap \"Time\" to enter the time remaining into the message.</string>
+    <string name="pref_message_default" formatted="false">%time until %title</string>
+    <string name="message_prompt">Tap here to set a countdown message</string>
+
+    <string name="icon_set">Icon set. Please close the dialog.</string>
+    <string name="close">Close</string>
+
+    <string name="notice_settings_applied">Your settings will be applied next time the countdown updates</string>
+
+    <!-- Defaults extension title and body -->
+    <string name="no_countdown_title">No Countdown Set</string>
+    <string name="no_countdown_body">Click here to set up the countdown</string>
+
+    <!-- Default countdown message -->
+    <string name="until" formatted="false">%s until %s</string>
+    <string name="since" formatted="false">%s since %s</string>
+    <string name="now">Now</string>
+    <string name="now_extended" formatted="false">%s is now</string>
+    <string name="today">Today</string>
+    <string name="today_extended" formatted="false">%s is today</string>
+
+    <!-- Plurals -->
+    <plurals name="days">
+        <item quantity="zero">0 days</item>
+        <item quantity="one">1 day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="zero">0 hours</item>
+        <item quantity="one">1 hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="zero">0 minutes</item>
+        <item quantity="one">1 minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+
+    <!-- Titles -->
+    <string name="short_title_days_only" formatted="false">%s</string>
+    <string name="short_title_days" formatted="false">%s days\n%s hours</string>
+    <string name="short_title_hours" formatted="false">%s hours\n%s minutes</string>
+    <string name="short_title_minutes" formatted="false">%s minutes</string>
+
+    <string name="full_countdown_days_only" formatted="false">%s</string>
+    <string name="full_countdown_days" formatted="false">%s, %s, %s</string>
+    <string name="full_countdown_hours" formatted="false">%s, %s</string>
+    <string name="full_countdown_minutes" formatted="false">%s</string>
+
+    <string-array name="click_actions">
+        <item>Update Countdown</item>
+        <item>Open Calendar</item>
+        <item>Open Countdown Settings</item>
+    </string-array>
+
+    <string-array name="click_actions_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>
