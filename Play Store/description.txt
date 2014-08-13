@@ -1,0 +1,8 @@
+A DashClock extension that will count the days, hours, and minutes until an event.
+<b>You will need DashClock Widget by Roman Nurik to use this extension.</b>
+
+You can see the source for this app on GitHub: http://goo.gl/ILO9R9
+
+This app was inspired by I/O 2013 DashClock Extension by NPike: http://goo.gl/1o1id
+
+If the countdown is not appearing on your DashClock, please try re-installing DashClock Widget. If the problem still exists, send an email to support@cr5315.com with your device name, Android version, if it's rooted, and any other information you wish to provide. Thanks!

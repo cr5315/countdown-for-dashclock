@@ -47,6 +47,12 @@
         android:title="@string/pref_time"
         android:dependency="pref_days_only_one"/>
 
+    <CheckBoxPreference
+        android:key="pref_invert_one"
+        android:title="@string/pref_invert"
+        android:summary="@string/pref_invert_summary"
+        android:dependency="pref_custom_message_one" />
+
     <ListPreference
         android:key="pref_action_one"
         android:title="@string/pref_action"

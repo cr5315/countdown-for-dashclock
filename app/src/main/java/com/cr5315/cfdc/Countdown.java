@@ -36,6 +36,7 @@ public class Countdown {
     private String PREF_DATE_YEAR = "pref_date_year_";
     private String PREF_TIME_HOUR = "pref_time_hour_";
     private String PREF_TIME_MINUTE = "pref_time_minute_";
+    private String PREF_INVERT = "pref_invert_";
 
     public static final int DIFF_DAYS = 0;
     public static final int DIFF_HOURS = 1;
@@ -57,6 +58,7 @@ public class Countdown {
         PREF_DATE_YEAR += number;
         PREF_TIME_HOUR += number;
         PREF_TIME_MINUTE += number;
+        PREF_INVERT += number;
     }
 
     public int[] getTimeRemaining() {
@@ -106,9 +108,17 @@ public class Countdown {
             hours -= 24;
         }
 
-        if (minutes < 0 && !sharedPreferences.getBoolean(PREF_CUSTOM_MESSAGE, false)) {
+        if ((minutes < 0 || hours < 0 || diffDays < 0)
+                && !sharedPreferences.getBoolean(PREF_CUSTOM_MESSAGE, false)) {
             // It's in the past. If we're using the default message, set isPast
             isPast = true;
+            diffDays *= -1;
+            hours *= -1;
+            minutes *= -1;
+        }
+
+        if (sharedPreferences.getBoolean(PREF_CUSTOM_MESSAGE, false)
+                && sharedPreferences.getBoolean(PREF_INVERT, false)) {
             diffDays *= -1;
             hours *= -1;
             minutes *= -1;

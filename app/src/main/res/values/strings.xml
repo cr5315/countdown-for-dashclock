@@ -34,6 +34,8 @@
     <string name="pref_date">Date</string>
     <string name="pref_days">Days Only</string>
     <string name="pref_time">Time</string>
+    <string name="pref_invert">Invert Values</string>
+    <string name="pref_invert_summary">Changes values such as -1 day to 1 day</string>
     <string name="pref_action">Click Action</string>
 
     <string name="message_dialog_help">Enter the message you want displayed in DashClock. Tap \"Title\" to insert the countdown title and tap \"Time\" to enter the time remaining into the message.</string>
