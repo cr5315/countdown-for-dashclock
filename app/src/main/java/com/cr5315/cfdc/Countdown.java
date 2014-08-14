@@ -183,7 +183,9 @@ public class Countdown {
         }
 
         String title = sharedPreferences.getString(PREF_TITLE, null);
-        if (!sharedPreferences.getBoolean(PREF_CUSTOM_MESSAGE, false)) {
+        if (title == null) {
+            return context.getString(R.string.no_countdown_body);
+        } else if (!sharedPreferences.getBoolean(PREF_CUSTOM_MESSAGE, false)) {
             if (isDaysOnly && diffs[DIFF_DAYS] == 0) {
                 return context.getString(R.string.today_extended, title);
             } else if (diffs[DIFF_DAYS] == 0 && diffs[DIFF_HOURS] == 0 && diffs[DIFF_MINUTES] == 0) {

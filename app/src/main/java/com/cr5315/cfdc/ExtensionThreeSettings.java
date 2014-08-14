@@ -46,24 +46,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 
-public class ExtensionOneSettings extends PreferenceActivity {
+public class ExtensionThreeSettings extends PreferenceActivity {
     private Context context;
     private Preference title, message, icon, date, time, action;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private SharedPreferences.OnSharedPreferenceChangeListener sharedPreferenceChangeListener;
 
-    private final String PREF_TITLE = "pref_title_one";
-    private final String PREF_MESSAGE = "pref_message_one";
-    private final String PREF_ICON = "pref_icon_one";
-    private final String PREF_DATE = "pref_date_one";
-    private static final String PREF_DATE_DAY = "pref_date_day_one";
-    private static final String PREF_DATE_MONTH = "pref_date_month_one";
-    private static final String PREF_DATE_YEAR = "pref_date_year_one";
-    private final String PREF_TIME = "pref_time_one";
-    private static final String PREF_TIME_HOUR = "pref_time_hour_one";
-    private static final String PREF_TIME_MINUTE = "pref_time_minute_one";
-    private final String PREF_ACTION = "pref_action_one";
+    private final String PREF_TITLE = "pref_title_three";
+    private final String PREF_MESSAGE = "pref_message_three";
+    private final String PREF_ICON = "pref_icon_three";
+    private final String PREF_DATE = "pref_date_three";
+    private static final String PREF_DATE_DAY = "pref_date_day_three";
+    private static final String PREF_DATE_MONTH = "pref_date_month_three";
+    private static final String PREF_DATE_YEAR = "pref_date_year_three";
+    private final String PREF_TIME = "pref_time_three";
+    private static final String PREF_TIME_HOUR = "pref_time_hour_three";
+    private static final String PREF_TIME_MINUTE = "pref_time_minute_three";
+    private final String PREF_ACTION = "pref_action_three";
 
     private boolean showUpdateNotice = false;
 
@@ -85,7 +85,7 @@ public class ExtensionOneSettings extends PreferenceActivity {
     @Override
     public void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.settings_one);
+        addPreferencesFromResource(R.xml.settings_three);
 
         title           = findPreference(PREF_TITLE);
         message         = findPreference(PREF_MESSAGE);
