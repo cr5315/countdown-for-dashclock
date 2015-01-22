@@ -124,7 +124,9 @@ public abstract class BaseExtensionSettings extends PreferenceActivity {
             showUpdateNotice = extras.getBoolean("fromExtension");
         }
     }
+
     public abstract String getCountdownNumber();
+
     public abstract int getXmlResource();
 
     @Override
@@ -132,12 +134,12 @@ public abstract class BaseExtensionSettings extends PreferenceActivity {
         super.onPostCreate(savedInstanceState);
         addPreferencesFromResource(getXmlResource());
 
-        title           = findPreference(getPrefTitle());
-        message         = findPreference(getPrefMessage());
-        icon            = findPreference(getPrefIcon());
-        date            = findPreference(getPrefDate());
-        time            = findPreference(getPrefTime());
-        action          = findPreference(getPrefAction());
+        title = findPreference(getPrefTitle());
+        message = findPreference(getPrefMessage());
+        icon = findPreference(getPrefIcon());
+        date = findPreference(getPrefDate());
+        time = findPreference(getPrefTime());
+        action = findPreference(getPrefAction());
 
         updateAllSummaries();
 
@@ -256,7 +258,8 @@ public abstract class BaseExtensionSettings extends PreferenceActivity {
             Calendar c = Calendar.getInstance();
             c.set(Calendar.HOUR_OF_DAY, hour);
             c.set(Calendar.MINUTE, minute);
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");;
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+            ;
             time.setSummary(simpleDateFormat.format(c.getTime()));
         }
     }
@@ -319,36 +322,36 @@ public abstract class BaseExtensionSettings extends PreferenceActivity {
     }
 
     private void showIconPickerDialog() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         final SharedPreferences.Editor editor = prefs.edit();
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(R.string.pref_icon);
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.dialog_icon_picker, null);
-        GridView gridView = (GridView) view.findViewById(R.id.gridview);
+        final LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View view = inflater.inflate(R.layout.dialog_icon_picker, null);
+        final AlertDialog dialog = new AlertDialog.Builder(context)
+                .setTitle(R.string.pref_icon)
+                .setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .setView(view)
+                .create();
+
+        final GridView gridView = (GridView) view.findViewById(R.id.gridview);
         gridView.setAdapter(new IconPickerAdapter(context));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View v, int position,
-                                    long id) {
+            public void onItemClick(final AdapterView<?> parent, final View v, final int position, final long id) {
                 editor.putInt(getPrefIcon(), IconPickerAdapter.thumbs[position]);
                 editor.commit();
                 Log.i("CFDC", "Icon id: " + IconPickerAdapter.thumbs[position]);
-                Toast.makeText(context, R.string.icon_set, Toast.LENGTH_LONG).show();
-            }
-
-        });
-        builder.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
+
         });
-        builder.setView(view);
-        builder.create();
-        builder.show();
+
+        dialog.show();
     }
 
     public static class TimePickerFragment extends DialogFragment
